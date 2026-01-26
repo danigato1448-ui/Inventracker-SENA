@@ -1,0 +1,4 @@
+com\inventracker\model\Producto.class
+com\inventracker\InventrackerApplication.class
+com\inventracker\repository\ProductoRepository.class
+com\inventracker\controller\ProductoController.class
