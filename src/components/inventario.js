@@ -58,12 +58,16 @@ const Inventario = () => {
         style={{ width: '100%', padding: '10px', marginBottom: '20px' }}
       />
 
-      {/* LISTADO DE PRODUCTOS */}
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {productosFiltrados.map(p => (
-          <ProductCard key={p.id} {...p} />
-        ))}
-      </div>
+     {/* LISTADO DE PRODUCTOS - Ahora envía la alerta de stock (HU08) */}
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px' }}>
+  {productosFiltrados.map(p => (
+    <ProductCard 
+      key={p.id} 
+      {...p} 
+      esCritico={p.stock < 5} // <--- Esta es la lógica que faltaba pasar
+    />
+  ))}
+</div>
     </div>
   );
 };
